@@ -19,8 +19,9 @@
 
   <modules>
     <!-- Module for the  project service -->
-    <module>resource-service</module>
     <module>task-service</module>
+    <module>resource-service</module>
+    <module>eureka-server</module>
     <module>project-service</module>
   </modules>
 
@@ -38,18 +39,6 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-
-    <!-- Flyway Core for database migrations -->
-    <dependency>
-      <groupId>org.flywaydb</groupId>
-      <artifactId>flyway-core</artifactId>
-    </dependency>
-
-    <!-- Flyway MySQL support for database migrations -->
-    <dependency>
-      <groupId>org.flywaydb</groupId>
-      <artifactId>flyway-mysql</artifactId>
     </dependency>
 
     <!-- Spring Boot DevTools for automatic restarts and live reload during development -->
