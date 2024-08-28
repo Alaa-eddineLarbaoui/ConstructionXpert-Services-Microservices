@@ -1,10 +1,10 @@
-package org.example.tasksservice;
+package org.example.resourceservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TasksServiceApplicationTests {
+class EquipementServiceApplicationTests {
 
     @Test
     void contextLoads() {

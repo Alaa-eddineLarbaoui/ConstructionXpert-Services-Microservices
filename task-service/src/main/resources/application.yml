@@ -1,9 +1,9 @@
 server:
-  port: 8081
+  port: 8082
 
 spring:
   application:
-    name: tasks-service
+    name: task-service
   datasource:
     url: jdbc:mysql://localhost:3306/task_db?createDatabaseIfNotExist=true
     username: root
