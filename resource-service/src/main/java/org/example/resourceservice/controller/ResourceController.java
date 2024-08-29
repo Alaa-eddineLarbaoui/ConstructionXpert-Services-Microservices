@@ -28,7 +28,7 @@ public class ResourceController {
 
     @PostMapping("/create")
     public ResponseEntity<Resource> createResource(@RequestBody Resource resource) {
-        Resource savedResource = resourceService.saveResource(resource);
+        Resource savedResource = resourceService.createResource(resource);
         return ResponseEntity.ok(savedResource);
     }
 

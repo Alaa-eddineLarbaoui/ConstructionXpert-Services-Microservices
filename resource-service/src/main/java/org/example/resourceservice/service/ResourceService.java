@@ -1,5 +1,6 @@
 package org.example.resourceservice.service;
 
+import org.example.resourceservice.feign.TaskClient;
 import org.example.resourceservice.model.Resource;
 import org.example.resourceservice.repository.ResourceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +14,18 @@ public class ResourceService {
     @Autowired
     private ResourceRepository resourceRepository;
 
+    @Autowired
+    private TaskClient taskClient;
+
     public List<Resource> showResources() {
         return resourceRepository.findAll();
     }
 
-    public Resource saveResource(Resource resource) {
-        return resourceRepository.save(resource);
+    public Resource createResource(Resource resource) {
+        if (taskClient.getTaskById(resource.getTaskId()) != null) {
+            return resourceRepository.save(resource);
+        }
+        throw new RuntimeException("Task not found");
     }
 
     public Resource findResource(Long id) {
