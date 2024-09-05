@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.example.taskservice.enums.Status;
 import org.springframework.cloud.client.loadbalancer.CompletionContext;
 
 import java.time.LocalDate;
@@ -24,7 +25,7 @@ public class Task {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false, length = 225)
-    private CompletionContext.Status status;
+    private Status status;
 
     @Column(name = "project_id" , nullable = false)
     private Long projectId;
