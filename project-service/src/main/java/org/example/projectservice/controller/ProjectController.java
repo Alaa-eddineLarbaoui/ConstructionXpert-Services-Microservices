@@ -21,7 +21,7 @@ public class ProjectController {
     public List<Project> showAllProjects() {
         return projectService.showProjects();
     }
-    
+
     @PreAuthorize("hasAnyRole('ADMIN', 'CUSTOMER')")
     @GetMapping("/get/{id}")
     public ResponseEntity<Project> getProjectById(@PathVariable Integer id) {
