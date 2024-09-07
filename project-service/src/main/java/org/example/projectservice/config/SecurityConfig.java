@@ -13,7 +13,12 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 public class SecurityConfig {
 
-    private final JwtAuthenticationFilter jwtAuthenticationFilter;
+
+
+    @Autowired
+    private JwtAuthenticationFilter jwtAuthenticationFilter;
+
+    //private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
     @Autowired
     public SecurityConfig(JwtAuthenticationFilter jwtAuthenticationFilter) {
@@ -37,3 +42,4 @@ public class SecurityConfig {
         return http.build();
     }
 }
+
