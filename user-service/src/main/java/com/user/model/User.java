@@ -4,7 +4,6 @@ import com.user.enums.Role;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.*;
 import lombok.*;
-import org.flywaydb.core.ProgressLoggerEmpty;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,6 +23,7 @@ public abstract class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "full_name")
     private String fullName;
     private String username;
     private String password;
